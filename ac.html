@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İyi ki hayatımın aşkısın 💖</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url("arka-plan.jpg") no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Poppins", sans-serif;
+      position: relative;
+      cursor: pointer;
+    }
+
+    /* Ortadaki yazı */
+    h1 {
+      color: #fff;
+      text-shadow: 0 0 15px rgba(0,0,0,0.7);
+      font-size: 2.8em;
+      z-index: 2;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 15px 25px;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Kalp animasyonu */
+    .heart {
+      position: absolute;
+      color: #ff4d6d;
+      font-size: 28px;
+      animation: floatUp 1.5s ease-out forwards;
+      opacity: 0.9;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-150px) scale(2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>İyi ki hayatımın aşkısın 💞</h1>
+
+  <script>
+    document.body.addEventListener("click", (e) => {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤️";
+      heart.style.left = e.clientX + "px";
+      heart.style.top = e.clientY + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 1500);
+    });
+  </script>
+</body>
+</html>
