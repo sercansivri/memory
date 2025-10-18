@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>❤ Sana Özel Bir Sürpriz ❤</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #ffb6c1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+    }
+    h1 {
+      color: white;
+      font-size: 2.5rem;
+      text-align: center;
+      z-index: 2;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 5s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      left: -10px;
+    }
+    .heart::after {
+      top: -10px;
+    }
+    @keyframes float {
+      from {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>❤ Sen benim en güzel tesadüfümsün ❤</h1>
+
+<script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+  setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
